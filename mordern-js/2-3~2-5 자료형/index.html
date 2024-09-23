@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수와 상수</title>
+</head>
+
+<body>
+  <script>
+    // let message = 'Hello';
+    // // 변수를 정의하고 값을 할당합니다.
+    // message = 'World';
+    // // 값이 변경되었습니다.
+
+    let Hello = 'Hello world!';
+    let message;
+
+    // Hello의 'Hello world' 값을 message에 복사합니다.
+    message = Hello;
+
+    // 2-4 변수와 상수 - 연습 과제1
+    let admin;
+    let name1;
+    name1 = "John";
+    admin = name1;
+
+    alert(admin);
+
+    // 2-4 변수와 상수 - 연습 과제2
+    // 문제 2-1 
+    let ourPlanetName = "Earth";
+    // 문제 2-2
+    let currentUserName = "John";
+
+    // 2-4 변수와 상수 - 연습 과제3
+    // 문제 3-1
+    // birthday는 대문자 상수로 명명이 적합함.
+
+    // 문제 3-2
+    // age는 년도에 따라 변하기 때문에 변수이므로,
+    // age는 대문자 상수에 불적합.
+
+    // 2-5 자료형 - 연습 과제1
+    let name = "Ilya";
+    alert(`hello${1}`); // 정답: hello1
+    alert(`hello${"name"}`); // 정답: helloname
+    alert(`hello${name}`); // 정답: helloIlya
+  </script>
+</body>
+
+</html>
