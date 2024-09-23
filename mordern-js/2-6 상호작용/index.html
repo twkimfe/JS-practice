@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상호작용</title>
+</head>
+
+<body>
+  <script>
+    function askName(attemptCount = 0) {
+      if (attemptCount >= 2) {
+        let continueOrExit = confirm("프로그램을 종료하시겠습니까?");
+        if (continueOrExit) {
+          alert("프로그램을 종료합니다. 안녕히 가세요!");
+          return;
+        }
+      }
+
+      alert("사용자의 이름을 입력해주세요.");
+      let name = prompt("이름 입력", '');
+
+      if (name === null) {
+        alert("프로그램을 종료합니다. 안녕히 가세요!");
+        return;
+      }
+
+      let result = confirm(`당신의 성함은 ${name} 이(가) 맞습니까?`);
+      if (result === true) {
+        alert(`반갑습니다, ${name}님!`);
+      } else {
+        askName(attemptCount + 1); // 다음 시도로 넘어감
+      }
+    }
+    askName(); // 함수 실행
+  </script>
+</body>
+
+</html>
