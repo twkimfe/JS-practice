@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 2-8 기본 연산자와 수학 - 연습 과제 1
+    // let a=1, b=1;
+    // let c= ++a; -> c= 2
+    // let d= b++; -> d= 1
+    // 수식 완료 후, a = 2, b = 2
+
+    // 2-8 기본 연산자와 수학 - 연습 과제 2
+    // let a = 2;
+    // let x = 1 + (a *=2);
+
+    // alert(a); -> a = 4
+    // alert(x); -> x = 5
+
+    // "" + 1 + 0 = 1 -> "10"
+    // "" + 1 + 0 = 1 -> -1
+    // true + false = 0 -> 1
+    // 6 / "3" = 2
+    // "2" * "3" = 6
+    // 4 + 5 + "px" = 9px -> "9px"
+    // "$" + 4 + 5 = $9 -> "$45"
+    // "4" - 2 = 2
+    // "4px" - 2 =  -> NaN
+    // 7 / 0 = null -> Infinity
+    // "  -9  " + 5 = = -95 -> "  -9  5"
+    // "  -9  " - 5 = = -14
+    // null + 1 = 1
+    // undefined + 1 =  -> NaN
+    // "\t \n" -2 = null  -> -2
+
+    // 2-8 기본 연산자와 수학 - 연습 과제 3
+
+    let a = Number(prompt("덧셈할 첫 번째 숫자를 입력해주세요.", 1));
+    let b = Number(prompt("덧셈할 두 번째 숫자를 입력해주세요.", 2));
+
+    alert(a + b); //  Number() 미추가 시, 12로 반환
+    // Number() 대신, prompt() 앞에 "+"추가 함으로 같은 기능 실현 가능
+  </script>
+
+</body>
+
+</html>
