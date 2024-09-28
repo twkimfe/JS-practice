@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>논리 연산자</title>
+</head>
+
+<body>
+  <script>
+    // 2-11 논리 연산자 - 연습 과제1
+    // alert(null || 2 || undefined);
+    // -> 2
+
+    // 2-11 논리 연산자 - 연습 과제2
+    // alert( alert(1) || 2 || alert(3) );
+    // -> 1 -> 2 (먼저 alert 반환, 그 다음 alert(1) 반환, 그 다음 2 반환)
+
+    // 2-11 논리 연산자 - 연습 과제3
+    // alert( 1 && null && 2);
+    // -> null
+
+    // 2-11 논리 연산자 - 연습 과제4
+    // alert( alert(1) && alert(2) )
+    // -> undefined (오답)
+
+    // (정답)
+    // -> 1 -> undefined (alert(1)를 평가, 반환 후 즉시 종료, alert(1) 평가 결과는 undefined 이기 때문)
+
+    // 2-11 논리 연산자 - 연습 과제5
+    // alert ( null || 2&&3 || 4);
+    // -> 3
+
+    // 2-11 논리 연산자 - 연습 과제6
+    // let age = prompt("나이를 입력하세요.", "")
+    // if (age >= 14 && age <= 90) {
+    //   alert('나이가 14~90세입니다.')
+    // }
+    // else {
+    //   alert('나이가 14~90세가 아닙니다.')
+    // }
+
+    // 2-11 논리 연산자 - 연습 과제7
+    // if (!(age >= 14 && age <= 90)) {
+    //   alert('나이가 14~90세가 아닙니다.')
+    // }
+    // if (age < 14 || age > 90) {
+    //   alert('나이가 14~90세가 아닙니다.')
+    // }
+
+    // 2-11 논리 연산자 - 연습 과제8
+    // first-> third (1번 코드 출력 후, 2번 코드 미출력, 그 후 3번 코드 출력)
+
+    let user = prompt('사용자 이름을 입력하세요', '')
+    if (user == 'Admin') {
+      let pw = prompt('비밀번호를 입력하세요.', '')
+      if (pw == 'TheMaster') {
+        alert('환영합니다!');
+      } else if (pw == null || pw == '') {
+        alert('취소되었습니다.');
+      } else {
+        alert('인증에 실패하였습니다.');
+      }
+    } else if (user == null || user == '') {
+      alert('취소되었습니다.');
+    } else {
+      alert("I don't know you.");
+    }
+
+  </script>
+</body>
+
+</html>
