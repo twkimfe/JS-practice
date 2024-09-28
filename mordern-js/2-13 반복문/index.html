@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 2-12 반복문 - 연습 과제1
+    // 반복이 진행될 떄마다 i는 1씩 감소, while(i)는 i=0 일 때 종료, 마지막 출력값는 i = 1.
+
+    // 2-12 반복문 - 연습 과제2
+    // 2-1.(++i) 경우
+    // 4
+    // 2-2.(i++) 경우
+    // 5
+
+    // 2-12 반복문 - 연습 과제3
+    // 3-1.(++i)
+    // 4
+    // 3-2.(i++)
+    // 5(오답)-> 4(정답)
+
+    // 2-12 반복문 - 연습 과제4
+    // for (let i = 2; i <= 10; i++) {
+    //   if (i % 2 == 0) {
+    //     alert(i);
+    //   }
+    // }
+
+    // 2-12 반복문 - 연습 과제5
+    // let i = 0;
+    // while (i < 3) {
+    //   alert(`number ${i}!`);
+    //   i++;
+    // }
+
+    // 2-12 반복문 - 연습 과제6
+
+    // 오답
+    // for (
+    //   let i = prompt("100보다 큰 숫자를 입력해주세요.", '');
+    //   i < 100;) {
+
+    //   let i = prompt("100보다 큰 숫자를 입력해주세요.")
+    //   if (i > 100 || i == null || i == '') { }
+    // }
+
+    // 정답
+    // let i;
+
+    // do {
+    //   i = prompt("100보다 큰 숫자를 입력해주세요.", 0);
+    // } while (i <= 100 && i);
+
+    // 2-12 반복문 - 연습 과제7
+    // 오답
+    // let n = prompt("임의의 숫자를 입력해주세요.", '')
+    // for (let i = 2; i % n == 0; i++) {
+    //   alert(i)
+    // }
+
+    // 정답
+    let n = prompt("임의의 숫자를 입력해주세요.", '')
+    nextPrime:
+    for (let i = 2; i <= n; i++) {
+      for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextPrime;
+      }
+
+      alert(i);
+    }
+  </script>
+</body>
+
+</html>
