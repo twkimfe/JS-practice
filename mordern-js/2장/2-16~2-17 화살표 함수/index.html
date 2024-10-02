@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표 함수 기본</title>
+</head>
+
+<body>
+  <script>
+    // 2-17 화살표 함수 기본 - 연습 과제1
+    // 원래 예제 함수
+    // function ask(question, yes, no) {
+    //   if (confirm(question)) yes()
+    //   else no();
+    // }
+
+    // ask(
+    //   "동의하십니까?",
+    //   function() { alert("동의하셨습니다."); },
+    //   function() { alert("취소 버튼을 누르셨습니다."); }
+    // );
+
+    // 화살표 함수 전환 함수
+    // 개인 해답
+    // let question = confirm("동의하십니까?");
+
+    // let ask = (question) ?
+    //   () => alert("동의하셨습니다.") :
+    //   () => alert("취소 버튼을 누르셨습니다.");
+
+    // ask();
+
+    // 정답
+    function ask(question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    ask(
+      "동의하십니까?",
+      () => alert("동의하셨습니다."),
+      () => alert("취소 버튼을 누르셨습니다.")
+    );
+  </script>
+</body>
+
+</html>
