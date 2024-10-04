@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+</head>
+
+<body>
+  <script>
+    // 4-1 객체 - 연습 과제1
+    // 해답
+    // let user = {
+    //   name: "John",
+    //   surname: "Smith",
+    // };
+
+    // user.name = "Pete";
+    // delete user.name;
+
+    // for (let prop in user) {
+    //   alert(prop);
+    //   alert(user[prop]);
+    // }
+
+    // 정답
+    // let user = {};
+    // user.name = "John";
+    // user.surname = "Smith";
+    // user.name = "Pete";
+    // delete user.name;
+
+    // 4-1 객체 - 연습 과제2
+    // 원 코드
+    // function isEmpty(obj) {
+    //   let(obj === null) ? ture : false;
+    // }
+    // let schedule = {};
+
+    // alert(isEmpty(schedule)); // true
+
+    // schedule["8:30"] = "get up";
+
+    // alert(isEmpty(schedule)); // false
+
+    // claude 수정 코드
+    // function isEmpty(obj) {
+    //   for (let key in obj) {
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    // let schedule = {};
+    // alert(isEmpty(schedule)); // true
+    // schedule["8:30"] = "get up";
+    // alert(isEmpty(schedule)); // false
+
+    // 정답
+    // function isEmpty(obj) {
+    //   for (let key in obj) {
+    //     // if the loop has started, there is a property
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    // 4-1 객체 - 연습 과제3
+    // 정상 실행됨
+
+    // 4-1 객체 - 연습 과제4
+    // 개인해답 및 수정
+    // let salaries = {
+    //   John: 100,
+    //   Ann: 160,
+    //   Pete: 130
+    // };
+    // let sum = 0;
+
+    // if (salaries == null) {
+    //   sum = 0;
+    // } else {
+    //   for (let key in salaries) {
+    //     sum += salaries[key];
+    //   }
+    // }
+
+    // alert(sum);
+
+    // 정답
+    // let salaries = {
+    //   John: 100,
+    //   Ann: 160,
+    //   Pete: 130
+    // };
+
+    // let sum = 0;
+    // for (let key in salaries) {
+    //   sum += salaries[key];
+    // }
+
+    // alert(sum); // 390
+
+    // 4-1 객체 - 연습 과제5
+    // 예제
+    // 함수 호출 전
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+
+    // multiplyNumeric(menu);
+
+    // // 함수 호출 후
+    // menu = {
+    //   width: 400,
+    //   height: 600,
+    //   title: "My menu"
+    // };
+
+    // 원 해답, 오류
+    // function multiplyNumeric(obj) {
+    //   if (typeof obj == "number") {
+    //     for (let key in obj) {
+    //       obj = obj[key] * 2;
+    //     }
+    //     return obj
+    //   }
+    // };
+
+    // alert(menu[prop]);
+
+    // 수정 후 해답
+    function multiplyNumeric(obj) {
+      for (let key in obj) {
+        if (typeof obj[key] == "number") {
+          obj[key] *= 2;
+        }
+      }
+    };
+
+    multiplyNumeric(menu);
+
+    // 함수 호출 후
+    // menu는 이제 다음과 같습니다:
+    // {
+    //   width: 400,
+    //   height: 600,
+    //   title: "My menu"
+    // }
+
+    // 객체의 속성 출력
+    for (let prop in menu) {
+      alert(prop + ": " + menu[prop]);
+    }
+
+    // 정답
+    // function multiplyNumeric(obj) {
+    //   for (let key in obj) {
+    //     if (typeof obj[key] == 'number') {
+    //       obj[key] *= 2;
+    //     }
+    //   }
+    // }
+
+  </script>
+</body>
+
+</html>
