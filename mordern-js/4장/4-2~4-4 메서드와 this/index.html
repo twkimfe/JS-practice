@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메서드</title>
+</head>
+
+<body>
+  <script>
+    // 4-4 메서드 - 연습 과제1
+    // alert(user.ref.name);
+    // 개인 해답
+    // 위 코드 결과값은 John을 반환함
+
+    // 정답
+    // 에러를 발생함. "Error: Cannot read property 'name' of undefined"
+    // 에러 이유: this 값을 설정할 땐 객체 정의가 사용되지 않았기 때문
+
+    // 4-4 메서드 - 연습 과제2
+    // 개인 해답 및 수정
+    // let calculator = {
+    //   num1: 0,
+    //   num2: 0,
+
+    //   read: function () {
+    //     this.num1 = +prompt('첫 번째 값을 입력해주세요.', '');
+    //     this.num2 = +prompt('두 번째 값을 입력해주세요.', '');
+    //   },
+
+    //   sum: function () {
+    //     return this.num1 + this.num2;
+    //   },
+
+    //   mul: function () {
+    //     return this.num1 * this.num2;
+    //   }
+    // };
+
+    // calculator.read();
+    // alert(calculator.sum());
+    // alert(calculator.mul());
+
+    // 정답
+    //     let calculator = {
+    //   sum() {
+    //     return this.a + this.b;
+    //   },
+
+    //   mul() {
+    //     return this.a * this.b;
+    //   },
+
+    //   read() {
+    //     this.a = +prompt('첫 번째 값:', 0);
+    //     this.b = +prompt('두 번째 값:', 0);
+    //   }
+    // };
+
+    // 4-4 메서드 - 연습 과제3
+    // 개인 해답 및 수정
+    let ladder = {
+      step: 0,
+      up() {
+        this.step++;
+        return this;
+      },
+      down() {
+        this.step--;
+        return this;
+      },
+      showStep() { // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
+        alert(this.step);
+        return this;
+      }
+    };
+
+    ladder.up().up().down().showStep()
+
+  </script>
+</body>
+
+</html>
