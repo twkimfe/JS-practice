@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생성자 함수</title>
+</head>
+
+<body>
+  <script>
+    // 4-5 생성자 함수 - 연습 과제1
+    // 개인 해답 및 수정
+    // 해답을 못 함
+
+    // 정답
+    // 가능하다. 함수 외부에서 객체를 정의하면, new A()== new B() 가 실현된다
+
+    // let obj = {}
+
+    // function A() {return obj;}
+    // function B() {return obj;}
+
+    // alert( new A() == new B());
+
+    // 4-5 생성자 함수 - 연습 과제2
+    // 개인 해답
+    // let x = +prompt("값 하나를 입력하세요.", '')
+    // let n = +prompt("다른 값 하나를 더 입력하세요.", '')
+
+    // let calculator = new Calculator();
+    // calculator.read();
+
+    // function sum() {
+    //   return x + n;
+    // }
+    // function mul() {
+    //   return x * n;
+    // }
+
+    // alert("Sum=" + calculator.sum());
+    // alert("Mul=" + calculator.mul());
+
+    // // 수정 후 해답
+    // let x = +prompt("값 하나를 입력하세요.", '');
+    // let n = +prompt("다른 값 하나를 더 입력하세요.", '');
+
+    // class Calculator {
+    //   constructor() {
+    //     this.x = 0;
+    //     this.n = 0;
+    //   }
+
+    //   read() {
+    //     this.x = x;
+    //     this.n = n;
+    //   }
+
+    //   sum() {
+    //     return this.x + this.n;
+    //   }
+
+    //   mul() {
+    //     return this.x * this.n;
+    //   }
+    // }
+
+    // let calculator = new Calculator();
+    // calculator.read();
+
+    // alert("Sum=" + calculator.sum());
+    // alert("Mul=" + calculator.mul());
+
+    // 정답
+    // function Calculator() {
+
+    // this.read = function() {
+    // this.a = +prompt('a?', 0);
+    // this.b = +prompt('b?', 0);
+    // };
+
+    // this.sum = function() {
+    // return this.a + this.b;
+    // };
+
+    // this.mul = function() {
+    // return this.a * this.b;
+    // };
+    // }
+
+    // let calculator = new Calculator();
+    // calculator.read();
+
+    // alert( "Sum=" + calculator.sum() );
+    // alert( "Mul=" + calculator.mul() );
+
+    // 4-5 생성자 함수 - 연습 과제3
+    // 개인 해답
+    // function Accumulator(startingValue) {
+    //   let value = startingValue
+
+    //   function accumulator() {
+    //     this.read = function () {
+    //       this.num = +prompt('num?', 0);
+    //       return value += this.num;
+    //     }
+    //     accumulator.value = value
+    //   }
+    // }
+
+    // let accumulator = new Accumulator(1); // 최초값: 1
+
+    // accumulator.read(); // 사용자가 입력한 값을 더해줌
+    // accumulator.read(); // 사용자가 입력한 값을 더해줌
+
+    // alert(accumulator.value);
+
+    // 수정 후 해답 (클래스 기반 방식)
+    // class Accumulator {
+    //   constructor(startingValue) {
+    //     this.value = startingValue;
+    //   }
+
+    //   read() {
+    //     let num = +prompt('num?', 0);
+    //     this.value += num;
+    //   }
+    // }
+
+    // let accumulator = new Accumulator(1); // 최초값: 1
+    // accumulator.read(); // 사용자가 입력한 값을 더해줌
+    // accumulator.read(); // 사용자가 입력한 값을 더해줌
+    // alert(accumulator.value);
+
+    // 정답 (함수 생성자 방식)
+    function Accumulator(startingValue) {
+      this.value = startingValue;
+
+      this.read = function () {
+        this.value += +prompt('더할 값을 입력해주세요.', 0);
+      };
+
+    }
+
+    let accumulator = new Accumulator(1);
+    accumulator.read();
+    accumulator.read();
+    alert(accumulator.value);
+
+  </script>
+</body>
+
+</html>
