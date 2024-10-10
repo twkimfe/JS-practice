@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원시값의 메서드</title>
+</head>
+
+<body>
+  <script>
+    // 5-5 원시값의 메서드 - 연습 과제1
+    // 예문 (alert창에 무엇이 출력되는 지 해답하라)
+    let str = "Hello";
+
+    str.test = 5;
+
+    alert(str.test);
+
+    // 개인답안
+    // 5-> 5가 반환됨 (틀림)
+
+    // 정답
+    // 엄격 모드 시,
+    // An error -> 이 값을 반환
+    // 비엄격 모드 시
+    // undefined -> 이 값을 반환
+    // 원시값 str는 추가 데이터, 추가 속성을 저장, 추가할 수 없어서 위 코드는 오류 코드
+  </script>
+</body>
+
+</html>
