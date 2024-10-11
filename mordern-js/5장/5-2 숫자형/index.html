@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자형</title>
+</head>
+
+<body>
+
+  <script>
+    // 5-2 숫자형 - 연습 과제1
+    // 개인답안
+    // let n1 = +prompt('합산 할 값을 입력해주세요.', '')
+    // let n2 = +prompt('합산 할 값을 하나 더 입력해주세요.', '')
+
+    // function sum() {
+    //   sum = n1 + n2;
+    //   return sum;
+    // }
+
+    // alert('두 수의 합은 ' + sum());
+
+    // 정답
+    // let a = +prompt("The first number?", "");
+    // let b = +prompt("The second number?", "");
+
+    // alert(a + b);
+
+    // 5-2 숫자형 - 연습 과제2
+    // 예문: 6.35.toFixed(1) == 6.3 인 이유는?
+
+    // 개인답안
+    // 문자열에 소수점, 정밀도 손실 이유로 제대로 된 값을 반환 못 함. -> 틀림
+    // 해결책: -> 틀림
+    // let n1 = 6.35
+    // let n2 = Math.floor(n1 * 100) / 100
+
+    // alert(n2.toFixed(1))
+
+    // 수정 후 정답
+    // let n1 = 6.35
+    // let n2 = Math.ceil(n1 * 10) / 10
+
+    // alert(n2.toFixed(1))
+
+    // 정답
+    // 10진으로 나타낸 소수 6.35는 내부적으로는 2진법 무한소수. 고로 정밀도 손실 이슈로 손실 발생.
+    // 6.35.toFixed(20); -> 6.34999999999999964473 반환
+    // alert(Math.round(6.35 * 10) / 10);
+    // 위 수식으로 내부 소수를 정수에 가깝게 만들어야 함
+
+    // 5-2 숫자형 - 연습 과제3
+    // 개인답안 -> 오답
+    // let n1 = prompt('숫자형 값을 입력해주세요.', '')
+
+    // function readNumber() {
+    //   if (n1 == Number) {
+    //     alert('참 잘 했어요!');
+    //   } else if (n1 == '') {
+    //     return n1 = null;
+    //     alert(n1);
+    //   }
+    // }
+
+    // 수정 후 개인답안
+    // function readNumber() {
+    //   let input = prompt('숫자형 값을 입력해주세요.', '');
+
+    //   if (input === '' || input === null) {
+    //     return null;
+    //   }
+
+    //   let number = Number(input); // 문자열을 숫자로 변환
+
+    //   if (typeof number === 'number' && !isNaN(number)) {
+    //     alert('참 잘 했어요!');
+    //     return number;
+    //   } else {
+    //     alert('유효한 숫자를 입력해주세요.');
+    //     return readNumber(); // 재귀적으로 다시 호출
+    //   }
+    // }
+
+    // let result = readNumber();
+    // alert(result);
+
+    // 정답
+    // function readNumber() {
+    //   let num;
+
+    //   do {
+    //     num = prompt("Enter a number please?", 0);
+    //   } while (!isFinite(num));
+
+    //   if (num === null || num === '') return null;
+
+    //   return +num;
+    // }
+
+    // alert(`Read: ${readNumber()}`);
+
+    // 5-2 숫자형 - 연습 과제4
+    // 개인 해답: i!=10 문구를 i< 10으로 수정해야 함 -> 오답
+    // 정답:
+    // 왜냐면 어떤 경우에도 i는 10이 될 수 없고, 고로 무한 루프 발생.
+    // 0.2 같은 분수를 더할 때도 정밀도 손실이 발생할 수 있어서,
+    // 소수나 분수 대상으로는 등호 비교 코드를 지양해야 함.
+
+    // 5-2 숫자형 - 연습 과제5
+    // 개인해답 -> 틀림
+    // function random(min, max) {
+    //   let min = Math.random() + 1
+    //   let max = Math.random() + 5 - 1
+
+    //   return random();
+    // }
+
+    // alert(random(1, 5));
+
+    // 수정 후 개인 답안
+    // function random(min, max) {
+    //   return Math.random() * (max - min) + min;
+    // }
+
+    // 테스트
+    // console.log(random(1, 5));
+    // alert(random(1, 5));
+
+    // 정답
+    // function random(min, max) {
+    //   return min + Math.random() * (max - min);
+    // }
+
+    // alert(random(1, 5));
+    // alert(random(1, 5));
+    // alert(random(1, 5));
+
+    // 5-2 숫자형 - 연습 과제6
+    // 개인해답 -> 오답
+    // function random(min, max) {
+    // return Math.ceil(min + Math.random() * (max - min));
+    // }
+
+    // alert(random(1, 5));
+    // alert(random(1, 5));
+    // alert(random(1, 5));
+
+    // 정답 1 - (각 정수 법위를 정수 양쪽으로 0.5씩 확장)
+    // 모든 정수가 동일한 확률을 갖게됨
+    // function randomInteger(min, max) {
+    // now rand is from  (min-0.5) to (max+0.5)
+    // 이제 rand는 (min-0.5)부터 (max+0.5)까지의 범위에 있습니다
+    // let rand = min - 0.5 + Math.random() * (max - min + 1);
+    // return Math.round(rand);
+    // }
+
+    // alert( randomInteger(1, 5) );
+
+    // 정답 2 - (각 정수에 정확한 확률 제공)
+    // function randomInteger(min, max) {
+    // here rand is from min to (max+1)
+    // rand는 min부터 (max+1)까지의 범위에 있음
+    // let rand = min + Math.random() * (max + 1 - min);
+    // return Math.floor(rand);
+    // }
+
+    // alert( randomInteger(1, 5) );
+  </script>
+
+</body>
+
+</html>
