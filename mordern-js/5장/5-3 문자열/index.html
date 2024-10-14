@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열</title>
+</head>
+
+<body>
+  <script>
+    // 5-1 문자열 - 연습 과제1
+    // 개인해답 -> 제대로 작동 못 함
+    // function ucFirst(str) {
+    //   let upper = str[0].toUpperCase();
+
+    //   return str = upper;
+    // }
+
+    // alert(ucFirst("john") == "John");
+
+    // 수정된 해답
+    // function ucFirst(str) {
+    //   if (!str) return str;
+    //   let firstChar = str[0].toUpperCase();
+    //   let restOfString = str.slice(1);
+    //   return firstChar + restOfString;
+    // }
+
+    // alert(ucFirst("john") == "John");
+
+    // 정답
+    // function ucFirst(str) {
+    // if (!str) return str;
+
+    // return str[0].toUpperCase() + str.slice(1);
+    // }
+
+    // alert( ucFirst("john") );
+    // John
+
+    // 5-1 문자열 - 연습 과제2
+    // 개인해답 -> 작동 안됨
+    // function checkSpam(str) {
+    //   let msg = prompt('채팅을 쳐주세요.', 'buy ViAgRA now')
+
+    //   if (msg == !str) return msg = '';
+
+    //   let lowerMsg = msg.toLowerCase();
+    // 'viagra'나 'xxx'가 포함되어 있는지 확인
+    //   return lowerMsg.includes('viagra') || lowerMsg.includes('xxx');
+
+    //   checkSpam() = lowerMsg()
+
+
+    //   if (checkSpam() == true) {
+    //     alert('해당 메세지는 제한이 됩니다.');
+    //   } else {
+    //     alert(checkSpam())
+    //   }
+    // }
+
+    // 수정된 해답
+    // function checkSpam(str) {
+    //   입력된 문자열을 소문자로 변환
+    //   let lowerStr = str.toLowerCase();
+
+    //   'viagra'나 'xxx'가 포함되어 있는지 확인
+    //   return lowerStr.includes('viagra') || lowerStr.includes('xxx') || lowerStr.includes('sex') || lowerStr.includes('fuck');
+    // }
+
+    // function main() {
+    //   let msg = prompt('채팅을 쳐주세요.', 'buy ViAgRA now');
+
+    //   if (msg === null || msg === '') {
+    //     alert('입력이 취소되었거나 빈 문자열입니다.');
+    //     return;
+    //   }
+
+    //   if (checkSpam(msg)) {
+    //     alert('해당 메시지는 제한됩니다.');
+    //   } else {
+    //     alert('입력한 메시지: ' + msg);
+    //   }
+    // }
+    // main();
+    // alert(checkSpam('buy ViAgRA now'));
+    // alert(checkSpam('free xxxxx'));
+    // alert(checkSpam("innocent rabbit"));
+
+    // 정답
+    // function checkSpam(str) {
+    // let lowerStr = str.toLowerCase();
+
+    // return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+    // }
+
+    // alert( checkSpam('buy ViAgRA now') );
+    // alert( checkSpam('free xxxxx') );
+    // alert( checkSpam("innocent rabbit") );
+
+    // 5-1 문자열 - 연습 과제3
+
+    // 5-1 문자열 - 연습 과제4
+
+  </script>
+</body>
+
+</html>
