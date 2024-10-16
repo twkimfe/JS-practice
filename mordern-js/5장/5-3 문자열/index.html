@@ -9,7 +9,7 @@
 
 <body>
   <script>
-    // 5-1 문자열 - 연습 과제1
+    // 5-3 문자열 - 연습 과제1
     // 개인해답 -> 제대로 작동 못 함
     // function ucFirst(str) {
     //   let upper = str[0].toUpperCase();
@@ -39,7 +39,7 @@
     // alert( ucFirst("john") );
     // John
 
-    // 5-1 문자열 - 연습 과제2
+    // 5-3 문자열 - 연습 과제2
     // 개인해답 -> 작동 안됨
     // function checkSpam(str) {
     //   let msg = prompt('채팅을 쳐주세요.', 'buy ViAgRA now')
@@ -99,9 +99,50 @@
     // alert( checkSpam('free xxxxx') );
     // alert( checkSpam("innocent rabbit") );
 
-    // 5-1 문자열 - 연습 과제3
+    // 5-3 문자열 - 연습 과제3
+    // 개인 해답 미구현, ai 참고 진행
+    // ai 답안
+    // function truncate(str, maxlength) {
+    //   if (str.length <= maxlength) {
+    //     return str;
+    //   }
+    //   return str.slice(0, maxlength - 1) + "…";
+    // }
 
-    // 5-1 문자열 - 연습 과제4
+    // alert(truncate("What I'd like to tell on this topic is:", 20))
+    // alert(truncate("Hi everyone!", 20))
+
+    // 정답
+    // function truncate(str, maxlength) {
+    //   return (str.length > maxlength) ?
+    //     str.slice(0, maxlength - 1) + '…' : str;
+    // }
+
+    // 5-3 문자열 - 연습 과제4
+    // 개인해답 -> 작동 안됨
+    //   function extracCurrencyValue(str) {
+    //   str = str.indexOf(Number)
+    //   return +str;
+    // }
+
+    // alert(extractCurrencyValue('$120') === 120);
+
+    // ai 수정 = 오답, false 반환
+    // function extractCurrencyValue(str) {
+    //   str = str.indexOf(Number)
+    //   return +str;
+    // }
+
+    // alert(extractCurrencyValue('$120') === 120);
+
+    // 예제대로 ai가 수정한 해답은 정답과 같아서 생략.
+
+    // 정답
+    // function extractCurrencyValue(str) {
+    //   return +str.slice(1);
+    // }
+
+    // alert(extractCurrencyValue('$120') === 120);
 
   </script>
 </body>
