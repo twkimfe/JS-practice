@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열</title>
+</head>
+
+<body>
+  <script>
+    // 5-4 배열 - 연습 과제1
+    // alert( fruits.length ); 안에 있는 값은?
+    // 개인 해답:
+    // ["사과","배","오렌지","바나나"]; -> 오답
+    // 정답:
+    // alert( fruits.length ); -> 반환 값은 4
+
+    // 5-4 배열 - 연습 과제2
+    // 개인 해답: -> 정상 작동
+    // let style = ["Jazz", "Blues"]
+    // alert(style);
+    // Jazz, Blues
+
+    // style.push("Rock-n-Roll")
+    // alert(style);
+    // Jazz, Blues, Rock-n-Roll
+
+    // style[1] = "Classics"
+    // alert(style);
+    // Jazz, Classics, Rock-n-Roll
+
+    // style.shift();
+    // Jazz
+    // alert(style);
+    // Classics, Rock-n-Roll
+
+    // style.unshift("Rap", "Reggae")
+    // alert(style)
+    // Rap, Reggae, Classics, Rock-n-Roll
+
+    // 정답
+    // let styles = ["Jazz", "Blues"];
+    // styles.push("Rock-n-Roll");
+    // styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+    // alert( styles.shift() );
+    // styles.unshift("Rap", "Reggae");
+
+    // 5-4 배열 - 연습 과제3
+    // arr[2](); 무엇을 반환?
+    // 개인 해답:-> 오답
+    // arr[2](); -> a
+
+    // 정답
+    // arr[2]();->
+    // a, b, function(){alert( this );}
+
+    // 5-4 배열 - 연습 과제4
+    // 개인해답 -> 오류
+    // sumInput();
+
+    // function sumInput() {
+    //   let inputNum = prompt("임의의 숫자를 입력하세요.", '0')
+    //   let arr = [inputNum()]
+
+    //   if inputNum = (null || '') {
+    //     return end;
+    //   } else if inputNum == 0 {
+    //     return inputNum;
+    //   }
+
+    //   let sum = arr +=
+
+    //     alert sumInput(sum);
+    // }
+
+    // ai 수정 해답
+    // function sumInput() {
+    //   let numbers = [];
+
+    //   while (true) {
+    //     let value = prompt("숫자를 입력하세요, 취소하면 합산 결과가 나옵니다.", "0");
+
+    // 입력이 취소되었거나 빈 문자열이거나 숫자가 아닌 경우 반복 중단
+    //     if (value === null || value === "" || !isFinite(value)) break;
+
+    //     numbers.push(+value);
+    //   }
+
+    //   let sum = 0;
+    //   for (let number of numbers) {
+    //     sum += number;
+    //   }
+
+    //   return sum;
+    // }
+
+    // 함수 실행 및 결과 출력
+    // alert(sumInput());
+
+    // 정답
+
+
+
+
+  </script>
+
+</body>
+
+</html>
