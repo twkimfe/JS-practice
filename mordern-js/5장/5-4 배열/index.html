@@ -99,9 +99,81 @@
     // alert(sumInput());
 
     // 정답
+    // function sumInput() {
 
+    // let numbers = [];
 
+    // while (true) {
 
+    // let value = prompt("숫자를 입력해 주세요.", 0);
+
+    //   입력받는 것을 정지해야 하는 경우
+    // if (value === "" || value === null || !isFinite(value)) break;
+
+    // numbers.push(+value);
+    // }
+
+    // let sum = 0;
+    // for (let number of numbers) {
+    // sum += number;
+    // }
+    // return sum;
+    // }
+
+    // alert( sumInput() );
+
+    // 5-4 배열 - 연습 과제5
+    // 개인해답 및 ai 수정 ()-> arr 생성 코드 작성 + getMaxSubSum() 코드 학습
+    // let arr = []
+
+    // function sumInput() {
+    //   for (let i = 0; i < 10; i++) {
+    //     let value = prompt("임의의 숫자를 입력하세요.", '');
+
+    //     if (value === null || value === "" || !isFinite(value)) {
+    //       break;
+    //     }
+
+    //     arr.push(+value);
+    //   }
+    // }
+
+    // function getMaxSubSum(arr) {
+    //   let maxSum = 0;
+    //   let currentSum = 0;
+
+    //   for (let item of arr) {
+    //     currentSum += item;
+    //     maxSum = Math.max(maxSum, currentSum);
+    //     if (currentSum < 0) currentSum = 0;
+    //   }
+
+    //   return maxSum;
+    // }
+
+    // sumInput();
+    // alert(arr);
+    // alert(getMaxSubSum(arr));
+
+    // 위 코드는 Kadane's 알고리즘로 알려지는 유명한 알고리즘, 따로 심화 학습할 것.
+
+    // 정답
+    // function getMaxSubSum(arr) {
+    // let maxSum = 0;
+    // let partialSum = 0;
+
+    // for (let item of arr) {
+    // 배열의 각 요소를
+    // partialSum += item;
+    // partialSum에 더합니다.
+    // maxSum = Math.max(maxSum, partialSum);
+    // 최대값을 기억해 놓습니다.
+    // if (partialSum < 0) partialSum = 0;
+    // 음수가 되면 0을 대입합니다.
+    //   }
+
+    //   return maxSum;
+    // }
 
   </script>
 
