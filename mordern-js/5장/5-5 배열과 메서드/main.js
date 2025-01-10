@@ -270,3 +270,234 @@
 
 // 5-5 배열과 메서드 - 연습 과제8
 // 객체 매핑하기
+// 개인 해답-> 미작성, 작성안 구상 불가
+
+// 정답- ai 제공 - 교재 정답과 일치
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+
+// let users = [john, pete, mary];
+
+// let usersMapped = users.map((user) => ({
+//   fullName: `${user.name} ${user.surname}`,
+//   id: user.id,
+// }));
+
+// console.log(usersMapped);
+
+// 5-5 배열과 메서드 - 연습 과제9
+// 나이 기준으로 객체 정렬
+// 개인 해답-> 오답 - 구문 문제로 정상 실행 불가
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [pete, john, mary];
+
+// function sortByAge(users) {
+//   let usersAge = users.map((user) => ({
+//     name: user.name,
+//     age: user.age,
+//   }));
+//   usersAge.age.sort((a, b) => b - a);
+// }
+
+// sortByAge(arr);
+// console.log(arr[0].name);
+
+// 정답- ai 제공 - 교재 정답과 일치
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+// let arr = [pete, john, mary];
+
+// function sortByAge(users) {
+//   users.sort((a, b) => a.age - b.age);
+//   나이순 오름차 정렬
+// }
+
+// sortByAge(arr);
+// console.log(arr);
+// console.log(arr[0].name);
+
+// 5-5 배열과 메서드 - 연습 과제10
+// 배열 요소 무작위로 섞기
+// 개인 해답-> 미작성, 작성안 구상 불가
+
+// 정답- ai 제공
+// Fisher-Yates shuffle 피셔-예이츠 셔플
+// function shuffle(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     // 0부터 i까지 무작위 index 생성
+//     let j = Math.floor(Math.random() * (i + 1));
+
+//     // array[i]와 array[j] 값 교환
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+//   return array;
+// }
+// let arr = [1, 2, 3];
+
+// shuffle(arr);
+// console.log(arr);
+
+// 정답- 교재 해답 1 - 빈도가 달라서 부적절
+// function shuffle(array) {
+//   array.sort(() => Math.random() - 0.5);
+// }
+// let arr = [1, 2, 3];
+
+// shuffle(arr);
+// console.log(arr);
+// 정답- 교재 해답 2 - 빈도 이슈를 피셔-예이츠 셔플로 해결, ai 정답과 같음
+
+// 5-5 배열과 메서드 - 연습 과제11
+// 평균 나이 구하기
+// 개인 해답-> 오답 - 초기값 미추가, 나눗셈 문제
+// function getAverageAge(users) {
+//   let ages = users.map((user) => user.age);
+//   let averageAge = ages.reduce(
+//     ((sum, current) => sum + current) / (ages.length + 1)
+// ages.length는 이미 3, 3+1 할 필요 없음
+//   );
+//   return averageAge;
+// }
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+// let arr = [john, pete, mary];
+// console.log(getAverageAge(arr));
+
+// 정답- ai 제공 - 교재 정답과 일치
+// function getAverageAge(users) {
+//   let ages = users.map((user) => user.age);
+//   let averageAge;
+//   ages.reduce((sum, current) => sum + current, 0) / ages.length;
+//   return averageAge;
+//   // 교재 정답:
+//   // return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [john, pete, mary];
+
+// console.log(getAverageAge(arr));
+
+// 5-5 배열과 메서드 - 연습 과제12
+// 중복 없는 요소 찾아내기
+// 개인 해답-> 오답
+// - filter 메서드의 콜백 함수 문법 오류
+// - 배열 중복 요소 제거 로직 오류
+// function unique(arr) {
+//   let unique = arr.filter(arr.a != arr.b);
+//   return unique;
+// }
+
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// alert(unique(strings)); // Hare, Krishna, :-O
+
+// 정답- ai 제공
+// 1. Set 객체
+// function unique(arr) {
+//   return [...new Set(arr)];
+// }
+
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// console.log(unique(strings)); // Hare, Krishna, :-O
+
+// 2. filter, indexOf 사용
+// function unique(arr) {
+//   return arr.filter((item, index) => arr.indexOf(item) === index);
+// }
+
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// console.log(unique(strings)); // Hare, Krishna, :-O
+
+// 정답- 교재 해답
+// - 배열 모든 요소 각각 비교하여 추가
+// - 배열이 길 경우, 성능상 문제 생길 수 있음
+// function unique(arr) {
+//   let result = [];
+
+//   for (let str of arr) {
+//     if (!result.includes(str)) {
+//       result.push(str);
+//     }
+//   }
+//   return result;
+// }
+
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// console.log(unique(strings));
+
+// 5-5 배열과 메서드 - 연습 과제13
+// 배열에서 key 객체 찾기
+// 개인 해답-> 오답, reduce로 기능 구현 실패
+// function groupById(arr) {
+//   let {} = arr.reduce()
+// }
+
+// 정답- ai 제공 - 교재 정답과 일치
+// let users = [
+//   { id: "john", name: "John Smith", age: 20 },
+//   { id: "ann", name: "Ann Smith", age: 24 },
+//   { id: "pete", name: "Pete Peterson", age: 31 },
+// ];
+
+// function groupById(array) {
+//   return array.reduce(function (obj, user) {
+//     obj[user.id] = user;
+//     return obj;
+//   }, {});
+// }
+
+// let usersById = groupById(users);
+// console.log(usersById);
